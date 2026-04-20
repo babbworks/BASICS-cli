@@ -1,0 +1,57 @@
+{
+  "packId": "dirty-core-v1",
+  "version": "1.0.0",
+  "description": "High-signal BASICS Core dirty-test rule subset",
+  "rules": [
+    {
+      "ruleId": "BASICS-TIER-010",
+      "severity": "critical",
+      "mandatory": true,
+      "profiles": ["shared-core", "software"],
+      "description": "Core tier entry controls"
+    },
+    {
+      "ruleId": "BASICS-EVID-002",
+      "severity": "high",
+      "mandatory": true,
+      "profiles": ["shared-core", "software"],
+      "description": "Published event schema evidence"
+    },
+    {
+      "ruleId": "BASICS-EVID-004",
+      "severity": "high",
+      "mandatory": true,
+      "profiles": ["shared-core", "software"],
+      "description": "Compatibility and deviation policy evidence"
+    },
+    {
+      "ruleId": "BASICS-EVID-005",
+      "severity": "high",
+      "mandatory": true,
+      "profiles": ["shared-core", "software"],
+      "description": "Degraded-mode matrix and tier test evidence"
+    },
+    {
+      "ruleId": "BASICS-SC-041",
+      "severity": "critical",
+      "mandatory": true,
+      "profiles": ["shared-core", "software"],
+      "description": "Local core record create/edit without network dependency"
+    },
+    {
+      "ruleId": "BASICS-SC-050",
+      "severity": "high",
+      "mandatory": true,
+      "profiles": ["shared-core", "software"],
+      "description": "Event schema and command semantics published"
+    },
+    {
+      "ruleId": "BASICS-SC-051",
+      "severity": "high",
+      "mandatory": true,
+      "profiles": ["shared-core", "software"],
+      "description": "Compatibility signaling and additive-evolution policy"
+    }
+  ]
+}
+
