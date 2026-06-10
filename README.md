@@ -6,6 +6,34 @@ Primary goal:
 
 - turn BASICS from policy text into repeatable, local, evidence-backed checks
 
+---
+
+## What is it?
+
+BASICS-cli is a command-line tool that evaluates a local code repository against the BASICS standard — a protocol for operating business-focused applications. It maps findings to rule IDs, produces evidence-backed pass/fail reports, and tells product teams exactly which conformance requirements they are missing and why. Run it locally, in CI, or as part of a handover checklist.
+
+## The Problem
+
+Most teams can write strong architecture and protocol documentation but still miss hard requirements in implementation and release behaviour. BASICS conformance is evidence-driven — it requires specific artifacts, command surfaces, and policy files to exist and be structurally correct. Without a tool, auditing this manually is slow, subjective, and inconsistent across teams and projects.
+
+## How it Works
+
+`basics` reads a target repository path, evaluates a configurable set of rules from a JSON rule pack, and produces a machine report (JSON), a human report (Markdown), and a rule summary with pass/fail/partial/na per rule. Rules cover document evidence, command surface, policy artifacts, and tiered conformance levels. Exit codes are numeric and script-friendly.
+
+## Current Status
+
+v1.1.0 — dirty-test and assess modes implemented. Rule packs for shared-core and software profiles active. GUI/mobile app extension added (accepts `command-surface.md` as valid command surface evidence). Used by the Workpads project as its primary conformance assessment tool.
+
+## The Vision
+
+The canonical automated gate for BASICS conformance across all Babb projects and any external team adopting the standard. Long-term: a CI-friendly binary that integrates with GitHub Actions, produces structured evidence bundles, and supports the full tiered conformance model (Core → Field → Industrial).
+
+## Industry Context
+
+Business software standards like ISO 9001 and CMMI exist but are too heavyweight for small product teams. BASICS fills the gap — a lightweight, repo-native conformance protocol designed for the pace of working software teams. BASICS-cli makes it automatable.
+
+---
+
 ## Why this tool exists
 
 BASICS conformance is evidence-driven.
