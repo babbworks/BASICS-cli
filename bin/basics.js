@@ -202,10 +202,15 @@ function findAnyFiles(targetPath, predicate, limit = 5) {
 
 function evaluateRule(ruleId, ctx) {
   if (ruleId === "BASICS-EVID-001") {
+    // GUI-APP-EXTENSION: command-surface.md added as valid path for GUI/mobile apps
+    // that document their action vocabulary rather than a CLI command surface.
+    // See EXTENSION-GUI-APP.md for rationale and guidance.
     const commandSurface = firstExisting(ctx.target, [
       "cli.md",
       "protocol/cli.md",
-      "COMMANDS.md"
+      "COMMANDS.md",
+      "command-surface.md",
+      "conformance-tests/command-surface.md"
     ]);
     if (commandSurface) {
       return pass(ruleId, "Command surface evidence artifact found.", [{ type: "file", path: commandSurface }]);
@@ -213,8 +218,8 @@ function evaluateRule(ruleId, ctx) {
     return fail(
       ruleId,
       "No command surface evidence artifact found.",
-      [{ type: "search", detail: "Checked cli.md, protocol/cli.md, COMMANDS.md" }],
-      "Publish a command surface artifact (e.g., cli.md)."
+      [{ type: "search", detail: "Checked cli.md, protocol/cli.md, COMMANDS.md, command-surface.md, conformance-tests/command-surface.md" }],
+      "Publish a command surface artifact (e.g., cli.md for CLI tools, command-surface.md for GUI/mobile apps)."
     );
   }
 
@@ -237,10 +242,13 @@ function evaluateRule(ruleId, ctx) {
   }
 
   if (ruleId === "BASICS-SC-001") {
+    // GUI-APP-EXTENSION: command-surface.md added. See EXTENSION-GUI-APP.md.
     const commandDoc = firstExisting(ctx.target, [
       "cli.md",
       "protocol/cli.md",
-      "COMMANDS.md"
+      "COMMANDS.md",
+      "command-surface.md",
+      "conformance-tests/command-surface.md"
     ]);
     if (!commandDoc) {
       return fail(
@@ -269,10 +277,13 @@ function evaluateRule(ruleId, ctx) {
   }
 
   if (ruleId === "BASICS-SC-012") {
+    // GUI-APP-EXTENSION: command-surface.md added. See EXTENSION-GUI-APP.md.
     const commandDoc = firstExisting(ctx.target, [
       "cli.md",
       "protocol/cli.md",
-      "COMMANDS.md"
+      "COMMANDS.md",
+      "command-surface.md",
+      "conformance-tests/command-surface.md"
     ]);
     if (!commandDoc) {
       return fail(
@@ -423,10 +434,13 @@ function evaluateRule(ruleId, ctx) {
   }
 
   if (ruleId === "BASICS-SC-050") {
+    // GUI-APP-EXTENSION: command-surface.md added. See EXTENSION-GUI-APP.md.
     const commandDoc = firstExisting(ctx.target, [
       "cli.md",
       "protocol/cli.md",
-      "COMMANDS.md"
+      "COMMANDS.md",
+      "command-surface.md",
+      "conformance-tests/command-surface.md"
     ]);
     const eventSchema = firstExisting(ctx.target, [
       "event-schema.md",
@@ -485,7 +499,11 @@ function evaluateRule(ruleId, ctx) {
   }
 
   if (ruleId === "BASICS-TIER-010") {
-    const commandDoc = firstExisting(ctx.target, ["cli.md", "protocol/cli.md", "COMMANDS.md"]);
+    // GUI-APP-EXTENSION: command-surface.md added. See EXTENSION-GUI-APP.md.
+    const commandDoc = firstExisting(ctx.target, [
+      "cli.md", "protocol/cli.md", "COMMANDS.md",
+      "command-surface.md", "conformance-tests/command-surface.md"
+    ]);
     const eventSchema = firstExisting(ctx.target, [
       "event-schema.md",
       "conformance-tests/event-schema.md",

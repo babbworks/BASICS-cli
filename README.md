@@ -70,6 +70,7 @@ Every run produces:
 - `COMMANDS.md` - command and flag contract
 - `OUTPUTS.md` - report schema and severity model
 - `runner-core-v1.md` - implementation-level runner breakdown
+- `HANDOVER-NEXT-AGENT.md` - project status and next-agent handover
 - `package.json` - tool metadata and bin mapping
 - `bin/basics.js` - runnable CLI runner
 - `rules/dirty-core-v1.json` - harsh dirty-test rule pack
